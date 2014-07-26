@@ -9,6 +9,7 @@ Static HTML is sometimes preferable to PHP because it is faster (reduces server-
 
 ==========
 To use, enter the root URL of the static version of the static version of the site.
+
 	eg the root of the site with these pages
 		127.0.0.1/index.php
 		127.0.0.1/help.php
@@ -26,6 +27,7 @@ Then click 'Pick static folder' to select the folder containing the HTML files o
 The selected PHP files will appear in the left hand listbox and the selected HTML files will appear in the right hand listbox. Only files that appear in both boxes will be affected.
 
 Press continue to copy the generated HTML to the HTML files selected.
+
 ==========
 
 You can load and save configurations with the buttons at the bottom, to save time when copying the same websites multiple times (eg after updating the PHP version).
