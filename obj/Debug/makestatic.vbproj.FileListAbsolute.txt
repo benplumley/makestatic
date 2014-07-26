@@ -1,0 +1,11 @@
+c:\users\ben\Documents\Developer\Visual Studio 2013\Projects\makestatic\makestatic\bin\Debug\makestatic.exe.config
+c:\users\ben\Documents\Developer\Visual Studio 2013\Projects\makestatic\makestatic\bin\Debug\makestatic.exe
+c:\users\ben\Documents\Developer\Visual Studio 2013\Projects\makestatic\makestatic\bin\Debug\makestatic.pdb
+c:\users\ben\Documents\Developer\Visual Studio 2013\Projects\makestatic\makestatic\bin\Debug\makestatic.xml
+c:\users\ben\Documents\Developer\Visual Studio 2013\Projects\makestatic\makestatic\obj\Debug\makestatic.Form1.resources
+c:\users\ben\Documents\Developer\Visual Studio 2013\Projects\makestatic\makestatic\obj\Debug\makestatic.Resources.resources
+c:\users\ben\Documents\Developer\Visual Studio 2013\Projects\makestatic\makestatic\obj\Debug\makestatic.vbproj.GenerateResource.Cache
+c:\users\ben\Documents\Developer\Visual Studio 2013\Projects\makestatic\makestatic\obj\Debug\makestatic.exe
+c:\users\ben\Documents\Developer\Visual Studio 2013\Projects\makestatic\makestatic\obj\Debug\makestatic.xml
+c:\users\ben\Documents\Developer\Visual Studio 2013\Projects\makestatic\makestatic\obj\Debug\makestatic.pdb
+C:\Users\Ben\Documents\Developer\Visual Studio 2013\Projects\makestatic\makestatic\obj\Debug\makestatic.vbprojResolveAssemblyReference.cache
