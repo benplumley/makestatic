@@ -65,20 +65,36 @@ Public Class Form1
             End If
         Next
         If MsgBox("Copying " & numberOfValidFiles & " PHP files to HTML files. Continue?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
+            Dim numberSuccessful, numberFailed As Integer
+            Dim errorMessage As String = ""
             Dim HTMLSource As String = ""
             For i = 0 To PHPFilesToMakeStatic.Length - 1
                 If PHPFilesToMakeStatic(i) <> Nothing Then
-                    getHTMLSource(PHPFilesToMakeStatic(i), HTMLSource)
-                    writeToHTMLFile(PHPFilesToMakeStatic(i), HTMLSource)
+                    Try
+                        getHTMLSource(PHPFilesToMakeStatic(i), HTMLSource)
+                        writeToHTMLFile(PHPFilesToMakeStatic(i), HTMLSource)
+                        numberSuccessful += 1
+                    Catch ex As Exception
+                        errorMessage = ex.Message
+                        numberFailed += 1
+                    End Try
                 End If
             Next
+            If numberFailed = 0 Then
+                MsgBox("Complete.")
+            Else
+                MsgBox(numberFailed & " files failed to copy. The reason was: " & errorMessage)
+            End If
         End If
+        ProgressBar.Value = 0
     End Sub
 
     Sub getHTMLSource(singlePHPFile As String, ByRef HTMLSource As String)
         Dim fileURL As String = serverPath & "/" & singlePHPFile
         Dim webClient As New System.Net.WebClient
+
         HTMLSource = webClient.DownloadString(fileURL)
+        
     End Sub
 
     Sub writeToHTMLFile(singlePHPFile, HTMLSource)
@@ -92,6 +108,7 @@ Public Class Form1
         ProgressBar.Value = percentage
     End Sub
 
+#Region "Load and save config"
     Private Sub saveConfig_Click(sender As Object, e As EventArgs) Handles saveConfig.Click
         Dim appdataPath As String = GetFolderPath(SpecialFolder.ApplicationData) & "\makestatic"
         Dim configPath As String
@@ -138,11 +155,16 @@ Public Class Form1
             'This will be thrown if the user cancels the dialog
         End Try
     End Sub
+#End Region
 
     Private Sub txtServerPath_TextChanged(sender As Object, e As EventArgs) Handles txtServerPath.TextChanged
         serverPath = txtServerPath.Text
         If Mid(serverPath, 1, 7) <> "http://" And Mid(serverPath, 1, 8) <> "https://" Then
             serverPath = "http://" & serverPath
         End If
+    End Sub
+
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
     End Sub
 End Class
